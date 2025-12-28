@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="loading" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Latam Fire Power</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#121a2f">
+  <link rel="preload" href="styles/variables.css" as="style">
+
+<link rel="stylesheet" href="styles/variables.css">
+<link rel="stylesheet" href="styles/layout.css">
+<link rel="stylesheet" href="styles/rankings.css">
+<link rel="stylesheet" href="styles/tiers.css">
+<link rel="stylesheet" href="styles/animations.css">
+<link rel="stylesheet" href="styles/flag-frames.css">
+<link rel="stylesheet" href="styles/overlay.css">
+<link rel="stylesheet" href="styles/overlay-hud.css">
+<link rel="stylesheet" href="styles/utilities.css">
+<link rel="stylesheet" href="styles/countryview.css">
+<link rel="stylesheet" href="styles/android-fixes.css">
+<link rel="stylesheet" href="styles/responsive.css">
+<link rel="stylesheet" href="styles/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+  <h1>Latam Fire Power</h1>
+  <p class="subtitle">
+    Índice comparativo de poder militar en América Latina
+  </p>
+  
+  <div class="region-badges">
+    <span class="badge pacifico">Alianza del Pacífico</span>
+    <span class="badge mercosur">Mercosur</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" id="tab-latam">Latam</button>
+    <button class="tab" id="tab-global">Global</button>
+  </div>
+</header>
+
+<!-- CONTENEDOR PRINCIPAL (único) -->
+<main class="container" id="ranking"></main>
+
+<!-- PANEL DE EQUIPAMIENTO (opcional, puedes quitarlo si no lo usas) -->
+<div class="equipment-panel">
+  <h4>Equipamiento destacado</h4>
+  <div class="equipment-item">
+    <strong>Tanque:</strong> Leopard 2A4CHL
+  </div>
+</div>
+
+
+
+<!-- ===== SCRIPTS EN ORDEN CORRECTO ===== -->
+<!-- 1. DATOS DE EQUIPAMIENTO -->
+<script src="Data/equipment/tanks.js"></script>
+<script src="Data/equipment/infantry.js"></script>
+<script src="Data/equipment/armored.js"></script>
+<script src="Data/equipment/artillery.js"></script>
+<script src="Data/equipment/aircraft.js"></script>
+<script src="Data/equipment/fighters.js"></script>
+<script src="Data/equipment/helicopters.js"></script>
+<script src="Data/equipment/navy.js"></script>
+<script src="Data/equipment/submarines.js"></script>
+<script src="Data/equipment/patrol.js"></script>
+
+<!-- 2. MOTORES -->
+<script src="engine/equipmentEngine.js"></script>
+<script src="engine/powerEngine/core.js"></script>
+<script src="engine/powerEngine/countrys.js"></script>
+<script src="engine/powerEngine/ranking.js"></script>
+<script src="engine/powerEngine/filters.js"></script>
+<script src="engine/powerEngine/searchs.js"></script>
+<script src="engine/powerEngine/charts.js"></script>
+<script src="engine/calculateEngine.js"></script>
+
+<!-- 3. ESTÁNDARES (¡PRIMERO LATAM!) -->
+<script src="standards/Latam.js"></script>
+<script src="standards/Global.js"></script>
+
+<!-- 4. DATOS DE PAÍSES (¡PRIMERO GLOBAL!) -->
+<script src="Data/countries_global.js"></script>
+<script src="Data/countries_latam.js"></script>
+
+<!-- 5. COMPONENTES UI EXISTENTES -->
+<script src="UI/equipmentView.js"></script>
+<script src="UI/subTabs.js"></script>
+
+<!-- 6. NUEVO SISTEMA HUD -->
+<script src="UI/HUD/translations.js"></script>
+<script src="UI/HUD/tables.js"></script>
+<script src="UI/HUD/rankings.js"></script>
+<script src="UI/HUD/country.js"></script>
+<script src="UI/HUD/main.js"></script>
+
+<!-- 7. UI PRINCIPAL -->
+<script src="UI/ui.js"></script>
+
+<!-- 8. INICIALIZACIÓN -->
+<script src="init.js"></script>
+
+<script>
+// Debug helper
+window.debugDeps = function() {
+  console.log("=== DEPENDENCIAS DISPONIBLES ===");
+  console.log("calculate:", typeof calculate);
+  console.log("getEquipment:", typeof getEquipment);
+  console.log("countries_latam:", window.countries_latam ? "✓" : "✗");
+  console.log("countries_global:", window.countries_global ? "✓" : "✗");
+  console.log("latam_config:", window.latam_config ? "✓" : "✗");
+  console.log("HUD:", window.HUD ? Object.keys(window.HUD) : "✗");
+  console.log("================================");
+};
+
+// Ejecutar después de que todo cargue
+window.addEventListener('load', function() {
+  setTimeout(window.debugDeps, 1000);
+});
+</script>
+</body>
+</html>
