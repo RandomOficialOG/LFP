@@ -1,0 +1,164 @@
+/* styles/2-layout.css */
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(rgba(127, 255, 179, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 255, 179, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(0, 255, 170, 0.05), transparent 60%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding-bottom: var(--space-xl);
+}
+
+/* Contenedores principales */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+#ranking {
+  margin-top: var(--space-lg);
+}
+
+/* Header principal */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 8, 6, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  padding: var(--space-md) 0;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+h1 {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(180deg, #fff, #8da69c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: var(--space-md);
+}
+
+/* Region badges */
+.region-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.badge {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.badge.pacifico {
+  background: rgba(0, 170, 255, 0.1);
+  border: 1px solid var(--tier-splus);
+  color: var(--tier-splus);
+}
+
+.badge.mercosur {
+  background: rgba(0, 255, 170, 0.1);
+  border: 1px solid var(--tier-aplus);
+  color: var(--tier-aplus);
+}
+
+/* Main tabs (Latam/Global) */
+.tabs {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-tab {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.main-tab:hover {
+  color: #fff;
+  round: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.main-tab.active {
+  background: rgba(127, 255, 179, 0.15);
+  color: #7fffb3;
+  box-shadow: 0 2px 10px rgba(127, 255, 179, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Panel de equipamiento (opcional) */
+.equipment-panel {
+  max-width: 700px;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  background: var(--bg-panel);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.equipment-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.equipment-panel h4 {
+  margin-bottom: var(--space-sm);
+  color: var(--text-main);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.equipment-item {
+  color: var(--text-muted);
+  font-size: 14px;
+}

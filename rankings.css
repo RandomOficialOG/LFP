@@ -1,0 +1,96 @@
+/* styles/3-ranking.css */
+/* Estética de las filas del ranking */
+.rank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(20, 30, 25, 0.6), rgba(10, 15, 12, 0.8));
+  margin-bottom: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* Estado inicial para animación */
+  opacity: 1;
+  transform: translateY(20px)
+
+  /* Transiciones */
+  transition; transform :0.2s ease, border-color 0.2s ease, background 0.2s, box-shadow 0.3s;
+}
+
+.rank-row:hover {
+  transform: scale(1.02) translateY(-2px);
+  background: rgba(30, 45, 40, 0.8);
+  border-color: rgba(127, 255, 179, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Columnas dentro de la fila */
+.rank-col-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.rank-num {
+  font-family: var(--font-tech);
+  color: var(--text-muted);
+  font-size: 14px;
+  width: 25px;
+  text-align: center;
+}
+
+/* Banderas en el ranking - MEJORADO */
+.rank-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.flag-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rank-name {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.rank-row:hover .rank-name {
+  color: #fff;
+}
+
+/* Badge de Tier en el ranking */
+.tier-badge {
+  font-family: var(--font-tech);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 4px 8px;
+  min-width: 20px;
+  text-align: center;
+  text-shadow: var(--shadow-glow);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid currentColor;
+  transition: transform 0.2s;
+}
+
+.rank-row:hover .tier-badge {
+  transform: scale(1.1);
+}

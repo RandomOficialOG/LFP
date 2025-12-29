@@ -1,0 +1,107 @@
+/* styles/7-overlay-hud.css */
+/* Overlay GLOBAL - EFECTOS ESPECIALES CORREGIDOS */
+/* Oro: Solo 1-3 */
+.overlay-panel[data-global-rank="1"] .big-flag-img,
+.overlay-panel[data-global-rank="2"] .big-flag-img,
+.overlay-panel[data-global-rank="3"] .big-flag-img {
+  border: 4px solid var(--gold) !important;
+  box-shadow: 0 0 20px var(--gold-glow),
+              inset 0 0 15px rgba(255, 215, 0, 0.3),
+              0 0 30px rgba(255, 215, 0, 0.2) !important;
+  animation: goldPulse 2s infinite ease-in-out, flagFloat 4s infinite ease-in-out !important;
+  animation-play-state: running !important; /* Android fix */
+}
+
+/* Plata: Solo 4-10 */
+.overlay-panel[data-global-rank="4"] .big-flag-img,
+.overlay-panel[data-global-rank="5"] .big-flag-img,
+.overlay-panel[data-global-rank="6"] .big-flag-img,
+.overlay-panel[data-global-rank="7"] .big-flag-img,
+.overlay-panel[data-global-rank="8"] .big-flag-img,
+.overlay-panel[data-global-rank="9"] .big-flag-img,
+.overlay-panel[data-global-rank="10"] .big-flag-img {
+  border: 4px solid var(--silver) !important;
+  box-shadow: 0 0 18px var(--silver-glow),
+              inset 0 0 12px rgba(192, 192, 192, 0.2),
+              0 0 25px rgba(192, 192, 192, 0.15) !important;
+  animation: silverGlow 2.5s infinite ease-in-out, flagFloat 5s infinite ease-in-out !important;
+}
+
+/* Bronce: Solo 11-30 */
+.overlay-panel[data-global-rank="11"] .big-flag-img,
+.overlay-panel[data-global-rank="12"] .big-flag-img,
+.overlay-panel[data-global-rank="13"] .big-flag-img,
+.overlay-panel[data-global-rank="14"] .big-flag-img,
+.overlay-panel[data-global-rank="15"] .big-flag-img,
+.overlay-panel[data-global-rank="16"] .big-flag-img,
+.overlay-panel[data-global-rank="17"] .big-flag-img,
+.overlay-panel[data-global-rank="18"] .big-flag-img,
+.overlay-panel[data-global-rank="19"] .big-flag-img,
+.overlay-panel[data-global-rank="20"] .big-flag-img,
+.overlay-panel[data-global-rank="21"] .big-flag-img,
+.overlay-panel[data-global-rank="22"] .big-flag-img,
+.overlay-panel[data-global-rank="23"] .big-flag-img,
+.overlay-panel[data-global-rank="24"] .big-flag-img,
+.overlay-panel[data-global-rank="25"] .big-flag-img,
+.overlay-panel[data-global-rank="26"] .big-flag-img,
+.overlay-panel[data-global-rank="27"] .big-flag-img,
+.overlay-panel[data-global-rank="28"] .big-flag-img,
+.overlay-panel[data-global-rank="29"] .big-flag-img,
+.overlay-panel[data-global-rank="30"] .big-flag-img {
+  border: 4px solid var(--bronze) !important;
+  box-shadow: 0 0 16px var(--bronze-glow),
+              inset 0 0 10px rgba(205, 127, 50, 0.15),
+              0 0 20px rgba(205, 127, 50, 0.1) !important;
+  animation: bronzeShimmer 3s infinite ease-in-out, flagFloat 6s infinite ease-in-out !important;
+}
+
+/* Overlay LATAM - EFECTOS ESPECIALES */
+.overlay-panel[data-latam-rank="1"] .big-flag-img {
+  border: 4px solid var(--gold) !important;
+  box-shadow: 0 0 20px var(--gold-glow),
+              inset 0 0 15px rgba(255, 215, 0, 0.3),
+              0 0 30px rgba(255, 215, 0, 0.2) !important;
+  animation: goldPulse 2s infinite ease-in-out, flagFloat 4s infinite ease-in-out !important;
+}
+
+.overlay-panel[data-latam-rank="2"] .big-flag-img {
+  border: 4px solid var(--silver) !important;
+  box-shadow: 0 0 18px var(--silver-glow),
+              inset 0 0 12px rgba(192, 192, 192, 0.2),
+              0 0 25px rgba(192, 192, 192, 0.15) !important;
+  animation: silverGlow 2.5s infinite ease-in-out, flagFloat 5s infinite ease-in-out !important;
+}
+
+.overlay-panel[data-latam-rank="3"] .big-flag-img {
+  border: 4px solid var(--bronze) !important;
+  box-shadow: 0 0 16px var(--bronze-glow),
+              inset 0 0 10px rgba(205, 127, 50, 0.15),
+              0 0 20px rgba(205, 127, 50, 0.1) !important;
+  animation: bronzeShimmer 3s infinite ease-in-out, flagFloat 6s infinite ease-in-out !important;
+}
+
+/* Asegurar que todas las banderas grandes tengan borde base */
+.big-flag-img {
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.4s ease;
+  box-sizing: border-box !important; /* Android fix */
+}
+
+.hidden {
+  display: none;
+}
+
+.equipment-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tab-btn {
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.equipment-content {
+  margin-bottom: 15px;
+}

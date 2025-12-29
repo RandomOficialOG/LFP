@@ -1,0 +1,94 @@
+/* styles/11-android-fixes.css */
+/* Esta regla sobrescribe cualquier problema de visibilidad */
+body.android .rank-row[data-global-rank="1"],
+body.android .rank-row[data-global-rank="2"],
+body.android .rank-row[data-global-rank="3"],
+html.android .rank-row[data-global-rank="1"],
+html.android .rank-row[data-global-rank="2"], 
+html.android .rank-row[data-global-rank="3"] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  position: relative !important;
+  z-index: 100 !important;
+  background: linear-gradient(90deg, 
+    rgba(40, 60, 40, 0.9), 
+    rgba(20, 35, 25, 0.95)
+  ) !important;
+  border-left: 4px solid var(--accent-primary) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* =========================================
+   CORRECCIÓN DE STACKING PARA TOP 3
+   ========================================= */
+
+/* Resetear el z-index para TODOS los rank-row */
+#ranking .rank-row {
+  position: relative;
+  z-index: 1 !important; /* Reset a valor base */
+  transform: none !important; /* Remover transforms que crean stacking context */
+  isolation: isolate; /* Crear nuevo stacking context aislado */
+}
+
+/* Específicamente para el top 3 (USA, China, Rusia) */
+.rank-row[data-global-rank="1"],  /* USA */
+.rank-row[data-global-rank="2"],  /* China */
+.rank-row[data-global-rank="3"] { /* Rusia */
+  z-index: 2 !important; /* Solo un poco más alto */
+  margin-bottom: 15px !important; /* Espacio extra abajo */
+  
+  /* Efecto de separación sutil */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(127, 255, 179, 0.2), 
+      transparent
+    );
+  }
+}
+
+/* Asegurar que India (#4) no sea tapada */
+.rank-row[data-global-rank="4"] {
+  position: relative;
+  z-index: 1;
+  margin-top: 5px !important; /* Separación del top 3 */
+  
+   /* Pequeño efecto para destacar que está "debajo" */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Si el problema persiste, forzar orden de renderizado */
+#ranking {
+  display: flex;
+  flex-direction: column;
+}
+
+#ranking .rank-row {
+  order: var(--global-rank); /* Usar el rank como orden */
+}
+
+/* Específico para las posiciones problemáticas */
+.rank-row[data-global-rank="1"] { order: 1; }
+.rank-row[data-global-rank="2"] { order: 2; }
+.rank-row[data-global-rank="3"] { order: 3; }
+.rank-row[data-global-rank="4"] { order: 4; } /* India debería ir después */
+
+/* Oculta el panel de equipamiento */
+.equipment-panel {
+  display: none !important;
+}
+
+/* O si tiene un ID específico */
+#equipment-panel,
+#destacado-panel,
+#featured-equipment {
+  display: none !important;
+}

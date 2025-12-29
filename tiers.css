@@ -1,0 +1,75 @@
+/* styles/4-tiers.css */
+/* Clases de tier para filas - TODAS DEFINIDAS AQUÍ */
+.tier-splus { 
+  border-left: 3px solid var(--tier-splus); 
+  color: var(--tier-splus); 
+  animation: splusGlow 4s infinite ease-in-out;
+}
+
+.tier-s { 
+  border-left: 3px solid var(--tier-s); 
+  color: var(--tier-s); 
+  animation: aplusPulse 3s infinite ease-in-out;
+}
+
+.tier-aplus { 
+  border-left: 3px solid var(--tier-aplus); 
+  color: var(--tier-aplus); 
+}
+
+.tier-a { 
+  border-left: 3px solid var(--tier-a); 
+  color: var(--tier-a); 
+}
+
+.tier-b { 
+  border-left: 3px solid var(--tier-b); 
+  color: var(--tier-b); 
+}
+
+.tier-c { 
+  border-left: 3px solid var(--tier-c); 
+  color: var(--tier-c); 
+}
+
+.tier-d { 
+  border-left: 3px solid var(--tier-d); 
+  color: var(--tier-d); 
+}
+
+/* Badges de tier heredan color - TODOS DEFINIDOS */
+.tier-splus .tier-badge { 
+  color: var(--tier-splus); 
+  background: rgba(255, 215, 0, 0.1);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.tier-s .tier-badge { 
+  color: var(--tier-s); 
+  background: rgba(255, 170, 0, 0.1);
+}
+
+.tier-aplus .tier-badge { 
+  color: var(--tier-aplus); 
+  background: rgba(0, 255, 170, 0.1);
+}
+
+.tier-a .tier-badge { 
+  color: var(--tier-a); 
+  background: rgba(0, 170, 255, 0.1);
+}
+
+.tier-b .tier-badge { 
+  color: var(--tier-b); 
+  background: rgba(155, 48, 255, 0.1);
+}
+
+.tier-c .tier-badge { 
+  color: var(--tier-c); 
+  background: rgba(119, 119, 119, 0.1);
+}
+
+.tier-d .tier-badge { 
+  color: var(--tier-d); 
+  background: rgba(139, 69, 19, 0.1);
+}

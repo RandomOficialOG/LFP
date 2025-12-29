@@ -1,0 +1,190 @@
+/* styles/9-responsive.css */
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 20px;
+    --space-md: 14px;
+    --space-sm: 10px;
+    --space-xs: 3px;
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  h1 {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+  }
+  
+  .badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .main-tab {
+    padding: 6px 16px;
+    font-size: 11px;
+  }
+  
+  .rank-row {
+    padding: var(--space-md);
+    min-height: 60px !important; /* Asegurar altura en Android */
+  }
+  
+  .rank-name {
+    font-size: 14px;
+  }
+  
+  .rank-flag {
+    width: 35px;
+    height: 26px;
+  }
+  
+  .overlay-panel {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .panel-header {
+    padding: var(--space-md);
+  }
+  
+  .header-content {
+    gap: var(--space-md);
+  }
+  
+  .big-flag {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .header-text h2 {
+    font-size: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .panel-body {
+    padding: var(--space-md);
+  }
+  
+  /* ============================================
+     AJUSTES CRÍTICOS PARA TOP 3 EN ANDROID
+     ============================================ */
+  
+  /* REEMPLAZA TODO LO DE ABAJO CON ESTO: */
+  .rank-row[data-global-rank="1"],
+  .rank-row[data-global-rank="2"], 
+  .rank-row[data-global-rank="3"] {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: linear-gradient(90deg, rgba(30, 45, 30, 0.8), rgba(15, 25, 20, 0.9)) !important;
+  }
+  
+  /* Ajustes de marcos para móvil - VERSIÓN CORREGIDA */
+  .rank-row[data-global-rank="1"] .flag-img,
+  .rank-row[data-global-rank="2"] .flag-img,
+  .rank-row[data-global-rank="3"] .flag-img,
+  .rank-row[data-latam-rank="1"] .flag-img,
+  .rank-row[data-latam-rank="2"] .flag-img,
+  .rank-row[data-latam-rank="3"] .flag-img {
+    border: 3px solid !important; /* Mantener 3px, no 2px */
+    border-style: solid !important;
+    box-sizing: border-box !important;
+    animation-play-state: running !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+  
+  /* Especificar colores para cada puesto */
+  .rank-row[data-global-rank="1"] .flag-img,
+  .rank-row[data-latam-rank="1"] .flag-img {
+    border-color: var(--gold) !important;
+  }
+  
+  .rank-row[data-global-rank="2"] .flag-img,
+  .rank-row[data-latam-rank="2"] .flag-img {
+    border-color: var(--silver) !important;
+  }
+  
+  .rank-row[data-global-rank="3"] .flag-img,
+  .rank-row[data-latam-rank="3"] .flag-img {
+    border-color: var(--bronze) !important;
+  }
+  
+  .overlay-panel[data-global-rank="1"] .big-flag-img,
+  .overlay-panel[data-global-rank="2"] .big-flag-img,
+  .overlay-panel[data-global-rank="3"] .big-flag-img,
+  .overlay-panel[data-latam-rank="1"] .big-flag-img,
+  .overlay-panel[data-latam-rank="2"] .big-flag-img,
+  .overlay-panel[data-latam-rank="3"] .big-flag-img {
+    border-width: 4px !important; /* Mantener 4px, no 3px */
+  }
+}
+
+@media (max-width: 480px) {
+  .rank-col-left {
+    gap: var(--space-sm);
+  }
+  
+  .rank-num {
+    width: 20px;
+    font-size: 12px;
+  }
+  
+  .rank-flag {
+    width: 30px;
+    height: 22px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+  
+  .tabs-container {
+    flex-direction: column;
+  }
+  
+  .sub-tab {
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  
+  .eq-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .eq-value {
+    text-align: left;
+    margin-left: 0;
+  }
+  
+  /* Ajustes adicionales para móvil pequeño */
+  .rank-flag::after {
+    top: -4px;
+    right: -4px;
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+  
+  /* Asegurar que el top 3 sea visible incluso en pantallas pequeñas */
+  .rank-row[data-global-rank="1"],
+  .rank-row[data-global-rank="2"],
+  .rank-row[data-global-rank="3"] {
+    min-height: 55px !important;
+    padding: 12px !important;
+  }
+}

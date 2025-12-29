@@ -1,0 +1,55 @@
+/* styles/0-variables.css */
+:root {
+  /* Colores base - AJUSTA ESTOS */
+  --bg-dark: #050806;
+  --bg-panel: rgba(20, 30, 25, 0.7);
+  --border-light: rgba(127, 255, 179, 0.15);
+  --text-main: #e0e6e3;
+  --text-muted: #6c8077;
+  
+  /* Tier Colors - AJUSTA ESTOS */
+  --tier-splus: #ffd700;
+  --tier-s: #ffaa00; 
+  --tier-aplus: #00ffaa; 
+  --tier-a: #00aaff;
+  --tier-b: #9b30ff; 
+  --tier-c: #777777;
+  --tier-d: #8B4513;
+
+  /* Colores acento - AJUSTA ESTOS */
+  --accent-primary: #00ffaa;
+  --accent-secondary: #00aaff;
+  --danger: #ff4757;
+  --success: #00ffaa;
+  
+  /* Colores de medallero - NUEVOS */
+  --gold: #FFD700;
+  --silver: #C0C0C0;
+  --bronze: #CD7F32;
+  --gold-glow: rgba(255, 215, 0, 0.4);
+  --silver-glow: rgba(192, 192, 192, 0.3);
+  --bronze-glow: rgba(205, 127, 50, 0.25);
+  
+  /* Tipografía - AJUSTA ESTOS */
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+  --font-tech: "Consolas", "Courier New", monospace;
+  
+  /* Espaciado - AJUSTA ESTOS */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+  /* Sombras - AJUSTA ESTOS */
+  --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 15px rgba(0,0,0,0.3);
+  --shadow-lg: 0 25px 50px rgba(0,0,0,0.8);
+  --shadow-glow: 0 0 10px currentColor;
+  --shadow-gold: 0 0 15px var(--gold-glow);
+  --shadow-silver: 0 0 12px var(--silver-glow);
+  --shadow-bronze: 0 0 10px var(--bronze-glow);
+}
